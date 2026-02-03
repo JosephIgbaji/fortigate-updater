@@ -72,8 +72,8 @@ class FortiSSHClient {
                 port: this.config.port || 22,
                 username: this.config.username,
                 password: this.config.password,
-                // Common algorithms for older network gear compatibility might be needed here
-                // but we start with defaults.
+                readyTimeout: 20000, // Increase timeout to 20 seconds
+                debug: (msg) => console.log('[SSH2 DEBUG]:', msg) // Log low-level debug info
             });
         });
     }
