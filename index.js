@@ -3,6 +3,9 @@ const express = require('express');
 const FortiSSHClient = require('./src/FortiSSHClient');
 
 const app = express();
+// Trust Vercel proxy to get real client IP
+app.set('trust proxy', 1);
+
 const port = process.env.PORT || 3000;
 
 // Middleware to parse form data
